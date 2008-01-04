@@ -1,0 +1,2 @@
+- Start adding unit testing. Things that needs it so far:
+   - Rpg.Fudge.Trait.showShort
