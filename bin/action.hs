@@ -8,7 +8,7 @@ import Rpg.Fudge.Skill.Skill as Skill
 import Rpg.Fudge.Trait
 
 
-data Result = Result
+data Outcome = Outcome
    { succeeded :: Bool
    , degree :: Level
    }
@@ -32,8 +32,8 @@ data Character = Character
    deriving Show
 
 
-resolveUnopAct :: Action -> Character -> StdGen -> Result
-resolveUnopAct act char g = Result (deg >= actDiff) deg
+resolveUnopAct :: Action -> Character -> StdGen -> Outcome
+resolveUnopAct act char g = Outcome (deg >= actDiff) deg
    where
       actDiff = difficulty act
       skill = Map.findWithDefault skLockpicking
