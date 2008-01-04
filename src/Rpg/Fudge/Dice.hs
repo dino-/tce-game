@@ -1,4 +1,5 @@
 module Rpg.Fudge.Dice
+   ( rolldF, rolldFSum )
    where
 
 import Rpg.Dice
