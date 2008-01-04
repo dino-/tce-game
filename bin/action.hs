@@ -38,7 +38,7 @@ resolveUnopAct act char g = Result (deg >= actDiff) deg
       actDiff = difficulty act
       skill = Map.findWithDefault skLockpicking
          (Skill.name skLockpicking) (skills char)
-      deg = (level skill) + (roll4dF g)
+      deg = (level skill) + (rolldFSum 4 g)
 
 
 {-
