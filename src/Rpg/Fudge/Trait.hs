@@ -30,6 +30,21 @@ instance Ord Level where
    (Level l1) <= (Level l2) = l1 <= l2
 
 
+-- Construct the shortest possible description of these trait values
+-- short of using numbers alone
+showShort :: Level -> String
+showShort (Level l)
+   | l >   3  = "S" ++ show (l - 3)
+   | l < (-3) = "T" ++ show (abs (l + 3))
+showShort (Level   3 ) = "Su"
+showShort (Level   2 ) = "Gr"
+showShort (Level   1 ) = "Go"
+showShort (Level   0 ) = "Fa"
+showShort (Level (-1)) = "Me"
+showShort (Level (-2)) = "Po"
+showShort (Level (-3)) = "Te"
+
+
 superb, great, good, fair, mediocre, poor, terrible :: Level
 superb   = Level   3
 great    = Level   2
