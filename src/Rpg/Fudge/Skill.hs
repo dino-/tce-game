@@ -1,4 +1,4 @@
-module Rpg.Fudge.Skill.Skill
+module Rpg.Fudge.Skill
    where
 
 import Rpg.Fudge.Trait
@@ -9,4 +9,5 @@ data Skill = Skill
    , displayName :: String
    , desc :: String
    , level :: Level
-   } deriving Show
+   }
+   deriving Show
