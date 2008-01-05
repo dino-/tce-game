@@ -1,4 +1,4 @@
-#! /usr/bin/runhaskell
+#! /usr/bin/runhaskell -isrc
 
 import qualified Data.Map as Map
 import System.Random
