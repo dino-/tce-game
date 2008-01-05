@@ -41,6 +41,12 @@ resolveUnopAct act char g = Outcome (deg >= actDiff) deg
       deg = (level skill) + (rolldFSum 4 g)
 
 
+-- Should this default to Terrible instead of Poor?
+skSwordsmanship = Skill "Swordsmanship" "Swordsmanship" "foo" poor
+
+skLockpicking = Skill "Lockpicking" "Lockpicking" "bar" poor
+
+
 {-
 charJoe = Character "Joe" 0 $ Map.fromList
    [(id defSkSwordsmanship, defSkSwordsmanship { level = good })]
