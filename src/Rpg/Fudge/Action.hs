@@ -30,5 +30,5 @@ resolveUnopAct act defSkill char g = Outcome (deg >= actDiff) deg
    where
       actDiff = difficulty act
       skill = Map.findWithDefault defSkill
-         (name defSkill) (skills char)
-      deg = (level skill) + (rolldFSum 4 g)
+         (skillName defSkill) (skills char)
+      deg = (skillLevel skill) + (rolldFSum 4 g)
