@@ -57,3 +57,78 @@ computer RPG games I admire
 - Movement rate?
 - Hexes or quads?
 - Need initiative.
+
+-----
+Things I need in any game:
+
+- time of day and time passage
+- action points
+   - Being able to roll action points forward to subsequent rounds
+- movement rate
+- skill and attribute advancement
+   - What will be the mechanism we use to store training?
+- must be able to save anywhere for any reason
+- initiative
+
+-----
+What types of things can I borrow from some of these past games?
+
+- Jagged Alliance
+- Fallout
+- TES
+- Nethack
+
+-----
+Actions points from Fallout RPG
+
+They're based on the Agility Statistic like this:
+
+   Fallout Agility   #AP      Fudge Agility  #AP
+         1            5       Superb          11
+        2-3           6       Great           10
+        4-5           7       Good             9
+        6-7           8       Fair             8
+        8-9           9       Mediocre         7
+        10+          10       Poor             6
+                              Terrible         5
+
+   Or by formula: AP = Agility + 8
+
+-----
+Attributes in _Another Fine Mess_
+
+all animals:
+   Agility
+   Perception (Wisdom)
+   Strength
+   Health (Endurance, Constitution)
+   Willpower
+   Wits (Intelligence)
+
+individual animals' special attributes:
+
+   owl         Wisdom: Fair
+   racoon      Dexterity: Good
+   mutt        Energy: Great
+   bloodhound  Common Sense: Good
+   horse       Alertness: Great
+   falcon      Courage: Great
+   ferret      Curiosity: Great
+   cat         Dignity: Good
+
+-----
+Attributes for my thing:
+
+* Agility (Dexterity?)
+     I will use for: Action Points
+     Would this be the same as Dexterity for my purposes?
+* Perception (Wisdom?)
+     I will use for: initiative?, ranged weapon distance?,
+        noticing things or awareness
+* Strength
+     I will use for: melee damage, hit points?, carry weight
+* Health (Endurance, Constitution)
+     I will use for: hit points?
+  Willpower
+* Wits (Intelligence?)
+     I will use for: advancement rate adjustment?
