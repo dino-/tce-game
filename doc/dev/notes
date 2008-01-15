@@ -132,3 +132,23 @@ Attributes for my thing:
   Willpower
 * Wits (Intelligence?)
      I will use for: advancement rate adjustment?
+
+-----
+health and wound tracking
+This is showing two different methods of wound tracking. One is with the masks representing successive damagings. The other is using a DC attribute (or secondary attribute, whatever it's called)
+
+                                   DC (using this kind of like hit points)
+               mask  mod   dmg   Superb* (default? Not damaged?)
+Scratch1        001    0   1,2   Great
+Scratch2        010    0   1,2   Good
+Scratch3        011    0   1,2   Fair
+Hurt            100   -1   3,4   Mediocre
+Very Hurt       101   -2   5,6   Poor
+Incapacitated   110   --   7,8   Terrible (mod -3 ?)
+Near Death      111   --    9+   Terrible - 1
+
+- Relative degree of +1 is a graze
+- 0 or less, no damage
+- If using DC method:
+   - scratch damage does not reduce DC
+   - don't use it to calculate wound severity
