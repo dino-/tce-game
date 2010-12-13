@@ -43,6 +43,7 @@ showShort (Level   0 ) = "Fa"
 showShort (Level (-1)) = "Me"
 showShort (Level (-2)) = "Po"
 showShort (Level (-3)) = "Te"
+showShort _            = undefined
 
 
 superb, great, good, fair, mediocre, poor, terrible :: Level
