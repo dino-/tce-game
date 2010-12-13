@@ -33,6 +33,6 @@
 \.cvsignore$
 (^|/)Thumbs\.db$
 (^|/)autom4te\.cache($|/)
-#(^|/)dist($|/)
-#\.setup-config$
-(^|/)bin/dF$
+(^|/)dist($|/)
+\.setup-config$
+#(^|/)bin/dF$
