@@ -1,6 +1,3 @@
-module Main
-   where
-
 import Control.Monad ( replicateM_ )
 import System.Environment ( getArgs )
 import System.Random ( newStdGen )
