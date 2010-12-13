@@ -15,6 +15,7 @@ parseArgs (dice:[]) = (read dice, 1)
 parseArgs (dice:rolls:_) = (read dice, read rolls)
 
 
+main :: IO ()
 main = do
    args <- getArgs
    let (numDice, numRolls) = parseArgs args
