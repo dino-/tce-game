@@ -27,5 +27,5 @@ main = do
       let rollsSum = sum rolls
       let rollsLevel = Level rollsSum
 
-      let levelSumString = printf "%s (%d)" (show rollsLevel) rollsSum
-      printf "%-26s  %s\n" (levelSumString::String) (show rolls)
+      let levelSumString = printf "%+2d %s" rollsSum (show rollsLevel)
+      printf "%-25s  %s\n" (levelSumString::String) (show rolls)
