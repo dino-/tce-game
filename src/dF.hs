@@ -7,7 +7,7 @@ import System.Random ( newStdGen )
 import Text.Printf ( printf )
 
 import Rpg.Fudge.Dice ( rolldF )
-import Rpg.Fudge.Trait ( Level (..) )
+import Rpg.Fudge.Trait ( Level (..), ldispL )
 
 
 parseArgs :: [String] -> (Int, Int)
@@ -21,11 +21,7 @@ main = do
    args <- getArgs
    let (numDice, numRolls) = parseArgs args
    replicateM_ numRolls $ do
-      g <- newStdGen
+      rolls <- fmap (rolldF numDice) newStdGen
+      let rollsLevel = Level . sum $ rolls
 
-      let rolls = rolldF numDice g
-      let rollsSum = sum rolls
-      let rollsLevel = Level rollsSum
-
-      let levelSumString = printf "%+2d %s" rollsSum (show rollsLevel)
-      printf "%-25s  %s\n" (levelSumString::String) (show rolls)
+      printf "%-25s  %s\n" (ldispL rollsLevel) (show rolls)

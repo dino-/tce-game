@@ -1,23 +1,14 @@
 module Rpg.Fudge.Trait
    where
 
+import Text.Printf
+
 
 data Level = Level Int
+   deriving Show
 
 instance Eq Level where
    (Level l1) == (Level l2) = l1 == l2
-
-instance Show Level where
-   show (Level   4 ) = "Legendary (Superb + 1)"
-   show (Level   3 ) = "Superb"
-   show (Level   2 ) = "Great"
-   show (Level   1 ) = "Good"
-   show (Level   0 ) = "Fair"
-   show (Level (-1)) = "Mediocre"
-   show (Level (-2)) = "Poor"
-   show (Level (-3)) = "Terrible"
-   show (Level (-4)) = "Terrible - 1"
-   show (Level   l ) = "Level " ++ show l
 
 instance Num Level where
    (Level l1) + (Level l2) = Level (l1 + l2)
@@ -30,20 +21,50 @@ instance Ord Level where
    (Level l1) <= (Level l2) = l1 <= l2
 
 
--- Construct the shortest possible description of these trait values
--- short of using numbers alone
-showShort :: Level -> String
-showShort (Level l)
+{- Construct the shortest possible description of these trait values
+   short of using numbers alone
+-}
+ldisp2 :: Level -> String
+ldisp2 (Level l)
    | l >   3  = 'S' : show (l - 3)
    | l < (-3) = 'T' : show (abs (l + 3))
-showShort (Level   3 ) = "Su"
-showShort (Level   2 ) = "Gr"
-showShort (Level   1 ) = "Go"
-showShort (Level   0 ) = "Fa"
-showShort (Level (-1)) = "Me"
-showShort (Level (-2)) = "Po"
-showShort (Level (-3)) = "Te"
-showShort _            = undefined
+ldisp2 (Level   3 ) = "Su"
+ldisp2 (Level   2 ) = "Gr"
+ldisp2 (Level   1 ) = "Go"
+ldisp2 (Level   0 ) = "Fa"
+ldisp2 (Level (-1)) = "Me"
+ldisp2 (Level (-2)) = "Po"
+ldisp2 (Level (-3)) = "Te"
+ldisp2 _            = undefined
+
+
+{- Construct a short description of these trait values that includes 
+   the numbers
+-}
+ldisp4 :: Level -> String
+ldisp4 l@(Level m) = printf "%+d%s" m (ldisp2 l)
+
+
+{- Construct a long, human-readable description of a trait value
+-}
+ldisp :: Level -> String
+ldisp (Level   4 ) = "Legendary (Superb + 1)"
+ldisp (Level   3 ) = "Superb"
+ldisp (Level   2 ) = "Great"
+ldisp (Level   1 ) = "Good"
+ldisp (Level   0 ) = "Fair"
+ldisp (Level (-1)) = "Mediocre"
+ldisp (Level (-2)) = "Poor"
+ldisp (Level (-3)) = "Terrible"
+ldisp (Level (-4)) = "Terrible - 1"
+ldisp (Level   l ) = "Level " ++ show l
+
+
+{- Construct a long, human-readable description of a trait value
+   that includes the full number
+-}
+ldispL :: Level -> String
+ldispL l@(Level m) = printf "%+d %s" m (ldisp l)
 
 
 superb, great, good, fair, mediocre, poor, terrible :: Level
