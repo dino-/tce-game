@@ -11,7 +11,8 @@ import Rpg.Fudge.Trait ( Level (..) )
 
 
 parseArgs :: [String] -> (Int, Int)
-parseArgs (dice:[]) = (read dice, 1)
+parseArgs []             = (1, 1)
+parseArgs (dice:[])      = (read dice, 1)
 parseArgs (dice:rolls:_) = (read dice, read rolls)
 
 
