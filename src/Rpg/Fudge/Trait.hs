@@ -34,8 +34,8 @@ instance Ord Level where
 -- short of using numbers alone
 showShort :: Level -> String
 showShort (Level l)
-   | l >   3  = "S" ++ show (l - 3)
-   | l < (-3) = "T" ++ show (abs (l + 3))
+   | l >   3  = 'S' : show (l - 3)
+   | l < (-3) = 'T' : show (abs (l + 3))
 showShort (Level   3 ) = "Su"
 showShort (Level   2 ) = "Gr"
 showShort (Level   1 ) = "Go"
