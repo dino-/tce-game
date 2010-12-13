@@ -1,0 +1,21 @@
+name:                rpg
+version:             1.0.0.0
+cabal-version:       >= 1.2
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2010 Ren Hoek
+author:              Ren Hoek
+maintainer:          Ren Hoek <ren@spumco.co.dk>
+stability:           experimental
+homepage:            http://foo/bar/baz.html
+synopsis:            Foo
+description:         Bar Baz
+category:            Unknown
+tested-with:         GHC>=6.12.3
+
+executable           df
+   main-is:          dF.hs
+   hs-source-dirs:   src
+   build-depends:    base >= 3 && < 5, random
+   ghc-options:      -Wall
