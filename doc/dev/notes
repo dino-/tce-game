@@ -23,6 +23,40 @@ Trait
 (all of these things are traits)
 
 -----
+Fudging Mythic RPG - Odds Questions
+Written by fudgebob dicepants
+Saturday, 17 July 2010 05:04
+
+http://fudgerpg.com/community/fudge-blogs/discovering-fudge/77-fudging-mythic-rpg-odds-questions.html
+
+Mythic has a neat mechanic in resolving in-game questions which the GM has not prepared for or haven't even thought about.
+
+Check out Mythic RPG at http://www.mythic.wordpr.com/page14/page14.html.
+
+Here are my somewhat-simplified Fudge conversion:
+
+1. Ask an in-game question, answerable by a YES or a NO.
+
+2. Determine the Odds Modifiers:
+
+Has to be      +3
+A Sure Thing   +2
+Likely         +1
+50/50           0
+Unlikely       -1
+No Way         -2
+Impossible     -3
+
+3. To get the final answer, roll 4DF with modifiers:
+
+    *   A Superb or higher is an EXCEPTIONAL YES.
+    *   A Good to Great is a YES.
+    *   A Fair can be MARGINAL YES, A YES with Complications, or Unresolved/Delayed answer
+      (Pick only 1 for the session/campaign)
+    *   A Mediocre to Poor is a NO.
+    *   A Terrible or lower is an EXCEPTIONAL NO.
+
+-----
 other systems:
 - Osprey (sucky?)
 - WikiRPS
