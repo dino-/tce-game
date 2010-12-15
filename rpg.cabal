@@ -14,8 +14,8 @@ description:         Bar Baz
 category:            Unknown
 tested-with:         GHC>=6.12.3
 
-executable           dicef
-   main-is:          dicef.hs
+executable           dice
+   main-is:          dice.hs
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5, random
    ghc-options:      -Wall
