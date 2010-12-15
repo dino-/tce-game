@@ -1,7 +1,7 @@
 -----
 Fudge trait levels
 
- 4 Legendary
+ 4 Legendary (Superb +1)
  3 Superb
  2 Great
  1 Good
@@ -21,6 +21,26 @@ Trait
 +-Fault
 
 (all of these things are traits)
+
+-----
+answering questions
+
+ 4 Legendary (Superb +1)
+ 3 Superb                   3 and above, exceptional yes
+ 2 Great
+ 1 Good                     1 and above, yes
+ 0 Fair                     0 marginal yes
+-1 Mediocre                -1 and below, no
+-2 Poor
+-3 Terrible                -3 and below, exceptional no
+-4 Terrible -1
+
+-----
+random events
+
+4dF roll of >= +3Su : random event check, about 10% of the time
+chaos: starts at +0Fa
+4dF >= chaos : random event is occurring
 
 -----
 Fudging Mythic RPG - Odds Questions
@@ -51,8 +71,7 @@ Impossible     -3
 
     *   A Superb or higher is an EXCEPTIONAL YES.
     *   A Good to Great is a YES.
-    *   A Fair can be MARGINAL YES, A YES with Complications, or Unresolved/Delayed answer
-      (Pick only 1 for the session/campaign)
+    *   A Fair can be MARGINAL YES, A YES with Complications, or Unresolved/Delayed answer (Pick only 1 for the session/campaign)
     *   A Mediocre to Poor is a NO.
     *   A Terrible or lower is an EXCEPTIONAL NO.
 
