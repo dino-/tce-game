@@ -4,9 +4,9 @@ module Rpg.Dice
 import System.Random
 
 
-roll :: StdGen -> Int -> (Int, Int) -> [Int]
-roll g numDice range = take numDice $ randomRs range g
+roll :: (Int, Int) -> Int -> StdGen -> [Int]
+roll range numDice g = take numDice $ randomRs range g
 
 
-rollSum :: StdGen -> Int -> (Int, Int) -> Int
-rollSum g numDice range = sum $ roll g numDice range
+rollSum :: (Int, Int) -> Int -> StdGen -> Int
+rollSum range numDice g = sum $ roll range numDice g
