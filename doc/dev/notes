@@ -137,8 +137,9 @@ Attributes for my thing:
 health and wound tracking
 This is showing two different methods of wound tracking. One is with the masks representing successive damagings. The other is using a DC attribute (or secondary attribute, whatever it's called)
 
-                                   DC (using this kind of like hit points)
-               mask  mod   dmg   Superb* (default? Not damaged?)
+                                 DC (using this kind of like hit points)
+               mask  mod   dmg
+--              000    0   --    Superb* (default? Not damaged?)
 Scratch1        001    0   1,2   Great
 Scratch2        010    0   1,2   Good
 Scratch3        011    0   1,2   Fair
