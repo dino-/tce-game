@@ -1,13 +1,12 @@
 import Control.Arrow ( (&&&), first )
-import Control.Monad ( replicateM_ )
 import Data.Char ( toLower )
 import System.Environment ( getArgs )
-import System.Random ( StdGen, newStdGen )
+import System.Random ( RandomGen, newStdGen )
 import Text.Printf ( printf )
 
-import Rpg.Dice ( roll )
-import Rpg.Fudge.Dice ( rolldF )
-import Rpg.Fudge.Trait ( Level (..), ldispL )
+import Rpg.Dice ( rollNs )
+import Rpg.Fudge.Dice ( rolldFs )
+import Rpg.Fudge.Trait ( ldispL )
 
 
 usage :: String -> String
@@ -52,7 +51,7 @@ usage msg = init . unlines $
 parseArgList :: [String] -> (String, Int)
 parseArgList []                = error . usage $ "NO ARGUMENTS"
 parseArgList (diceCmd:[])      = (map toLower diceCmd, 1)
-parseArgList (diceCmd:rolls:_) = (map toLower diceCmd, read rolls)
+parseArgList (diceCmd:rs:_) = (map toLower diceCmd, read rs)
 
 
 parseDiceCmd :: String -> (Int, String)
@@ -69,20 +68,20 @@ parseDiceCmd = (first parseNumDice) .
       tailF t  = tail t
 
 
-rollFunction :: String -> (Int -> StdGen -> [Int])
-rollFunction "f"  = rolldF
-rollFunction "%"  = roll (1, 100)
-rollFunction "20" = roll (1, 20)
-rollFunction "12" = roll (1, 12)
-rollFunction "10" = roll (1, 10)
-rollFunction "8"  = roll (1, 8)
-rollFunction "6"  = roll (1, 6)
-rollFunction "4"  = roll (1, 4)
+rollFunction :: RandomGen g => String -> (Int -> g -> [[Int]])
+rollFunction "f"  = rolldFs
+rollFunction "%"  = rollNs (1, 100)
+rollFunction "20" = rollNs (1, 20)
+rollFunction "12" = rollNs (1, 12)
+rollFunction "10" = rollNs (1, 10)
+rollFunction "8"  = rollNs (1, 8)
+rollFunction "6"  = rollNs (1, 6)
+rollFunction "4"  = rollNs (1, 4)
 rollFunction _    = error . usage $ "UNKNOWN DIE TYPE"
 
 
 display :: String -> [Int] -> IO ()
-display "f" rs = printf "%-25s  %s\n" (ldispL . Level . sum $ rs) (show rs)
+display "f" rs = printf "%-15s  %s\n" (ldispL . sum $ rs) (show rs)
 display _   rs = printf "%3d  %s\n" (sum rs) (show rs)
 
 
@@ -90,6 +89,7 @@ main :: IO ()
 main = do
    (diceCmd, numRolls) <- fmap parseArgList getArgs
    let (numDice, diceType) = parseDiceCmd diceCmd
-   replicateM_ numRolls $ do
-      rolls <- fmap (rollFunction diceType numDice) newStdGen
-      display diceType rolls
+
+   rs <- fmap ((take numRolls) .
+      (rollFunction diceType numDice)) newStdGen
+   mapM_ (display diceType) rs
