@@ -1,10 +1,9 @@
 module Rpg.Fudge.Dice
-   ( rolldF, rolldFSum )
+   ( rolldFs, rolldFSums )
    where
 
 import Rpg.Dice
-import Rpg.Fudge.Trait
-import System.Random (StdGen)
+import System.Random ( RandomGen )
 
 
 {- Fudge dice are 6-sided dice with two + sides, two - sides, and two 
@@ -14,9 +13,15 @@ fudgeDieRange :: (Int, Int)
 fudgeDieRange = (-1, 1)
 
 
-rolldF :: Int -> StdGen -> [Int]
-rolldF = roll fudgeDieRange
+{- Roll groups of numDice Fudge dice and produce an infinite list of 
+   results
+-}
+rolldFs :: RandomGen g => Int -> g -> [[Int]]
+rolldFs numDice = (listOfListN numDice) . (rolls fudgeDieRange)
 
 
-rolldFSum :: Int -> StdGen -> Level
-rolldFSum numDice g = Level $ rollSum fudgeDieRange numDice g
+{- Roll groups of numDice Fudge dice and produce an infinite list of 
+   results summed and packed into trait Level datatypes
+-}
+rolldFSums :: RandomGen g => Int -> g -> [Int]
+rolldFSums = rollSums fudgeDieRange

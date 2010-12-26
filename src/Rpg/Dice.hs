@@ -1,12 +1,21 @@
 module Rpg.Dice
    where
 
-import System.Random
+import System.Random ( RandomGen, randomRs )
 
 
-roll :: (Int, Int) -> Int -> StdGen -> [Int]
-roll range numDice g = take numDice $ randomRs range g
+listOfListN :: Int -> [a] -> [[a]]
+listOfListN n xs = f : listOfListN n b
+   where (f, b) = splitAt n xs
 
 
-rollSum :: (Int, Int) -> Int -> StdGen -> Int
-rollSum range numDice g = sum $ roll range numDice g
+rolls :: RandomGen g => (Int, Int) -> g -> [Int]
+rolls = randomRs
+
+
+rollNs :: RandomGen g => (Int, Int) -> Int -> g -> [[Int]]
+rollNs range numDice = (listOfListN numDice) . (rolls range)
+
+
+rollSums :: RandomGen g => (Int, Int) -> Int -> g -> [Int]
+rollSums range numDice = (map sum) . (rollNs range numDice)
