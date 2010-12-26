@@ -30,7 +30,7 @@ usage msg = init . unlines $
    , ""
    , "Output:  SUM  [INDIVIDUAL DIE VALUES]"
    , "  Note that Fudge output is also annoted with the standard Fudge scale:"
-   , "     4 Legendary (Superb + 1)"
+   , "     4 Superb + 1"
    , "     3 Superb"
    , "     2 Great"
    , "     1 Good"
