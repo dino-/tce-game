@@ -29,7 +29,7 @@ usage msg = init . unlines $
    , "   F - Fudge die (value of -1, 0 or 1)"
    , ""
    , "Output:  SUM  [INDIVIDUAL DIE VALUES]"
-   , "  Note that Fudge output is also annoted with the standard Fudge scale:"
+   , "  Note that Fudge output is also described with the standard Fudge scale:"
    , "    +4 Superb + 1"
    , "    +3 Superb"
    , "    +2 Great"
