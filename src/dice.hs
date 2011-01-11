@@ -49,8 +49,8 @@ usage msg = init . unlines $
 
 
 parseArgList :: [String] -> (String, Int)
-parseArgList []                = error . usage $ "NO ARGUMENTS"
-parseArgList (diceCmd:[])      = (map toLower diceCmd, 1)
+parseArgList []             = error . usage $ "NO ARGUMENTS"
+parseArgList (diceCmd:[])   = (map toLower diceCmd, 1)
 parseArgList (diceCmd:rs:_) = (map toLower diceCmd, read rs)
 
 
