@@ -16,7 +16,7 @@ usage msg = init . unlines $
    , "Usage: dice [<NUMDICE>]d<TYPE> [<NUMROLLS>]"
    , "Generate random dice rolls."
    , ""
-   , "NUMDICE defaults to 1 if not specified"
+   , "NUMDICE and NUMROLLS both default to 1 if not specified"
    , ""
    , "Types:"
    , "  20 - 20 sided die"
