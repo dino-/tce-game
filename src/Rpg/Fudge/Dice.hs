@@ -13,15 +13,14 @@ fudgeDieRange :: (Int, Int)
 fudgeDieRange = (-1, 1)
 
 
-{- Roll groups of numDice Fudge dice and produce an infinite list of 
-   results
+{- Roll groups of Fudge dice and produce an infinite list of results
 -}
 rolldFs :: RandomGen g => Int -> g -> [[Int]]
-rolldFs numDice = (listOfListN numDice) . (rolls fudgeDieRange)
+rolldFs = rollNs fudgeDieRange
 
 
-{- Roll groups of numDice Fudge dice and produce an infinite list of 
-   results summed and packed into trait Level datatypes
+{- Roll groups of Fudge dice and produce an infinite list of results
+   summed and packed into trait Level datatypes
 -}
 rolldFSums :: RandomGen g => Int -> g -> [Int]
 rolldFSums = rollSums fudgeDieRange
