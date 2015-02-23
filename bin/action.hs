@@ -1,37 +1,92 @@
 #! /usr/bin/runhaskell -isrc
 
 import qualified Data.Map as Map
+import Data.Maybe ( fromJust )
 import System.Random
+import Text.Printf
 
 import Rpg.Fudge.Action
-import Rpg.Fudge.Character
-import Rpg.Fudge.Skill
 import Rpg.Fudge.Trait
 
 
--- Should this default to Terrible instead of Poor?
-skSwordsmanship = Skill "Swordsmanship" "foo" poor hard
+data Item
+   = ProjWeap
+      { pwName :: String
+      }
+   | Ammo
+      { ammoName :: String
+      , ammoWeaps :: String
+      , ammoDmg :: Int
+      }
+   deriving Show
 
-skLockpicking = Skill
-   { skillName = "Lockpicking"
-   , skillDesc = "bar"
-   , skillLevel = poor
-   , trainLevel = average
+
+data Character = Character
+   { charName :: String
+   , charFullName :: String
+   , charAttrs :: Map.Map String Level
+   , charSkills :: Map.Map String Level
+   , charScale :: Int
+   , charDC :: Level  -- Damage Capacity
+   , charEquip :: Map.Map String Item
    }
+   deriving Show
+
+
+defaultChar :: Character
+defaultChar = Character
+   { charName = ""
+   , charFullName = ""
+   , charAttrs = Map.empty
+   , charSkills = Map.empty
+   , charScale = 0
+   , charDC = superb
+   , charEquip = Map.empty
+   }
+
+
+lookupU k = fromJust . (Map.lookup k)
 
 
 {-
 charJoe = Character "Joe" 0 $ Map.fromList
    [(id defSkSwordsmanship, defSkSwordsmanship { level = good })]
 -}
-charJill = Character "Jill" "Jill" 0 $ Map.fromList
-   [(skillName skLockpicking, skLockpicking { skillLevel = mediocre })]
 
-actLock1 = Action "locked door 1" (skillName skLockpicking) good
+charJill = defaultChar
+   { charName = "Jill"
+   , charFullName = "Jill Valentine"
+   , charAttrs = Map.fromList
+      [ ("Strength", fair)
+      , ("Constitution", good)
+      , ("Dexterity", great)
+      , ("Intelligence", good)
+      , ("Perception", good)
+      , ("Willpower", great)
+      ]
+   } 
+
+charJane = defaultChar
+   { charName = "Jane"
+   , charFullName = "Jane"
+   , charSkills = Map.fromList [("Lockpicking", mediocre)]
+   }
+
+diffLock = good
 
 main = do
-   print charJill
-   print actLock1
    g <- newStdGen
-   let result = resolveUnopAct actLock1 skLockpicking charJill g
+
+   print charJill
+   let zombieDistance = fair
+   printf "zombie distance: %s\n" (ldisp4 zombieDistance)
+   let result = resolveUnopAct fair zombieDistance g
+   print result
+
+   print charJane
+   printf "lock difficulty: %s\n" (ldisp4 diffLock)
+   g <- newStdGen
+   --let skill = fromJust . (Map.lookup "Lockpicking") $ charSkills charJane
+   let skill = lookupU "Lockpicking" $ charSkills charJane
+   let result = resolveUnopAct skill diffLock g
    print result

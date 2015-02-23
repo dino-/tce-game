@@ -6,8 +6,10 @@ import Text.Printf
 
 type Level = Int
 
+{-
 data Trait = Trait String Level
    deriving Show
+-}
 
 
 {- Construct the shortest possible description of these trait values
