@@ -1,21 +1,23 @@
 name:                rpg
 version:             1.0
-cabal-version:       >= 1.2
-build-type:          Simple
+-- synopsis:            
+-- description:         
 license:             BSD3
 license-file:        LICENSE
-copyright:           2010 Ren Hoek
-author:              Ren Hoek
-maintainer:          Ren Hoek <ren@spumco.co.dk>
-stability:           experimental
-homepage:            http://foo/bar/baz.html
-synopsis:            Foo
-description:         Bar Baz
-category:            Unknown
-tested-with:         GHC>=6.12.3
+author:              Dino Morelli
+maintainer:          dino@ui3.info
+copyright:           2008-2015 Dino Morelli
+category:            Game
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
 
-executable           dice
+executable dice
    main-is:          dice.hs
+   -- other-modules:       
+   -- other-extensions:    
+   build-depends:      base >=4.7 && <4.8
+                     , random >=1.1 && <1.2
    hs-source-dirs:   src
-   build-depends:    base >= 3 && < 5, random
+   default-language: Haskell2010
    ghc-options:      -Wall
