@@ -1,6 +1,5 @@
 2015-02-23
 
-- Change version to 1.0
 - Rewrite README into proper README.md
 - Rename this effort as a game library of some kind. Not rpg-specific.
 - Redesign the Dice and Fudge types to use newtypes instead of type aliases
