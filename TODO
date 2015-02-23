@@ -7,6 +7,8 @@
 - Commit existing work and tag (suggesting `marker03` to go after the last tag)
 - Update copyright and similar things everywhere
 - Clean up the dice utility
+   - Does it need real arg parsing?
+   - Show version number in usage
 
 -----
 - Take a look at the organization of modules and apps. Ideally looking for separation of generic Rpg, Fudge-specific Rpg and this-game-specific. As well as a clear separation of presentation from all this.
