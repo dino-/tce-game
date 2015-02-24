@@ -8,14 +8,34 @@ module Rpg.Fudge.Trait
    )
    where
 
+import System.Random ( Random, randomR, random )
 import Text.Printf
 
 
-newtype Level = Level Int
+newtype Level = Level { unLevel :: Int }
    deriving (Eq, Num, Ord)
+
 
 instance Show Level where
    show = ldispShort
+
+
+instance Random Level where
+
+   randomR ((Level v), (Level w)) g = (Level x, newG)
+      where (x, newG) = randomR (v, w) g
+
+   random = randomR fudgeDieRange
+
+
+{- Fudge dice are 6-sided dice with two + sides, two - sides, and two 
+   blank sides. The possible values of each die are [-1, 0, 1]
+
+   This definition is used above for the Random instance of Level
+-}
+fudgeDieRange :: (Level, Level)
+fudgeDieRange = (mediocre, good)
+
 
 {-
 data Trait = Trait String Level

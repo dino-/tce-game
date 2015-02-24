@@ -68,22 +68,20 @@ parseDiceCmd = (first parseNumDice) .
       tailF t  = tail t
 
 
-rollFunction :: RandomGen g => String -> (Int -> g -> [[Int]])
-rollFunction "f"  = rolldFs
-rollFunction "%"  = rollNs (1, 100)
-rollFunction "20" = rollNs (1, 20)
-rollFunction "12" = rollNs (1, 12)
-rollFunction "10" = rollNs (1, 10)
-rollFunction "8"  = rollNs (1, 8)
-rollFunction "6"  = rollNs (1, 6)
-rollFunction "4"  = rollNs (1, 4)
-rollFunction _    = error . usage $ "UNKNOWN DIE TYPE"
+data Results
+   = IntS   [Int]
+   | LevelS [Level]
+
+instance Show Results where
+   show (IntS   rs) = printf "%3d  %s"   (sum rs) (show rs)
+   show (LevelS rs) = printf "%-15s  %s" (ldispLong . sum $ rs)
+      (show . map unLevel $ rs)
 
 
-display :: String -> [Int] -> IO ()
-display "f" rs =
-   printf "%-15s  %s\n" (ldispLong . Level . sum $ rs) (show rs)
-display _   rs = printf "%3d  %s\n" (sum rs) (show rs)
+rollFunction :: RandomGen g => String -> Int -> g -> [Results]
+rollFunction "f"   numDice = map LevelS . rolldFs numDice
+rollFunction "%"   numDice = map IntS   . rollNs (1, 100) numDice
+rollFunction sides numDice = map IntS   . rollNs (1, read sides) numDice
 
 
 main :: IO ()
@@ -93,4 +91,4 @@ main = do
 
    rs <- fmap ((take numRolls) .
       (rollFunction diceType numDice)) newStdGen
-   mapM_ (display diceType) rs
+   mapM_ print rs
