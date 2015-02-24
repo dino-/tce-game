@@ -12,7 +12,7 @@ resolveUnopAct skill difficulty g =
    ((rolledDegree >= difficulty), rolledDegree - difficulty)
 
    where
-      roll = head . (rolldFSums 4) $ g
+      roll = Level . head . (rolldFSums 4) $ g
       rolledDegree = skill + roll
 
 
@@ -21,6 +21,6 @@ resolveOppAct offensiveFactor defensiveFactor g =
    ((offensiveRoll >= defensiveRoll), offensiveRoll - defensiveRoll)
 
    where
-      (or:dr:_) = (take 2) . (rolldFSums 4) $ g
+      (or:dr:_) = (take 2) . (map Level) . (rolldFSums 4) $ g
       offensiveRoll = offensiveFactor + or
       defensiveRoll = defensiveFactor + dr

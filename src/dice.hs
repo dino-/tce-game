@@ -6,7 +6,7 @@ import Text.Printf ( printf )
 
 import Rpg.Dice ( rollNs )
 import Rpg.Fudge.Dice ( rolldFs )
-import Rpg.Fudge.Trait ( ldispL )
+import Rpg.Fudge.Trait ( Level (..), ldispLong )
 
 
 usage :: String -> String
@@ -81,7 +81,8 @@ rollFunction _    = error . usage $ "UNKNOWN DIE TYPE"
 
 
 display :: String -> [Int] -> IO ()
-display "f" rs = printf "%-15s  %s\n" (ldispL . sum $ rs) (show rs)
+display "f" rs =
+   printf "%-15s  %s\n" (ldispLong . Level . sum $ rs) (show rs)
 display _   rs = printf "%3d  %s\n" (sum rs) (show rs)
 
 

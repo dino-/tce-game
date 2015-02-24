@@ -79,12 +79,12 @@ main = do
 
    print charJill
    let zombieDistance = fair
-   printf "zombie distance: %s\n" (ldisp4 zombieDistance)
+   printf "zombie distance: %s\n" (ldispShort zombieDistance)
    let result = resolveUnopAct fair zombieDistance g
    print result
 
    print charJane
-   printf "lock difficulty: %s\n" (ldisp4 diffLock)
+   printf "lock difficulty: %s\n" (ldispShort diffLock)
    g <- newStdGen
    --let skill = fromJust . (Map.lookup "Lockpicking") $ charSkills charJane
    let skill = lookupU "Lockpicking" $ charSkills charJane

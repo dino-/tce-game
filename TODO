@@ -1,7 +1,6 @@
 2015-02-23
 
 - Rename this effort as a game library of some kind. Not rpg-specific.
-- Redesign the Dice and Fudge types to use newtypes instead of type aliases
 - Start using unit testing with HUnit and also Tasty
 - Bring that Fudge levels chart from the wiki into docs here
 - Commit existing work and tag (suggesting `marker03` to go after the last tag)
