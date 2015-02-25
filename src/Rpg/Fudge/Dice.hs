@@ -4,17 +4,17 @@ module Rpg.Fudge.Dice
 
 import Rpg.Dice
 import Rpg.Fudge.Trait
-import System.Random ( RandomGen, randoms )
+import System.Random ( randoms )
 
 
-{- Roll groups of Fudge dice and produce an infinite list of results
+{- | Roll groups of Fudge dice and produce an infinite list of results
 -}
 rolldFs :: RandomGen g => Int -> g -> [[Level]]
 rolldFs numDice = (listOfListN numDice) . randoms
 
 
-{- Roll groups of Fudge dice and produce an infinite list of results
-   summed and packed into trait Level datatypes
+{- | Roll groups of Fudge dice and produce an infinite list of
+   summed results
 -}
 rolldFSums :: RandomGen g => Int -> g -> [Level]
 rolldFSums numDice = (map sum) . rolldFs numDice
