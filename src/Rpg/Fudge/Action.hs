@@ -21,6 +21,6 @@ resolveOppAct offensiveFactor defensiveFactor g =
    ((offensiveRoll >= defensiveRoll), offensiveRoll - defensiveRoll)
 
    where
-      (or:dr:_) = (take 2) . (rolldFSums 4) $ g
-      offensiveRoll = offensiveFactor + or
+      (or' : dr : _) = (take 2) . (rolldFSums 4) $ g
+      offensiveRoll = offensiveFactor + or'
       defensiveRoll = defensiveFactor + dr

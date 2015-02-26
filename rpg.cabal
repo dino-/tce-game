@@ -21,3 +21,16 @@ executable dice
    hs-source-dirs:   src
    default-language: Haskell2010
    ghc-options:      -Wall
+
+library
+   exposed-modules:  Rpg.Dice
+                     Rpg.Fudge.Action
+                     Rpg.Fudge.Dice
+                     Rpg.Fudge.Character
+                     Rpg.Fudge.Skill
+                     Rpg.Fudge.Trait
+   build-depends:      base >=4.7 && <4.8
+                     , random >=1.1 && <1.2
+   hs-source-dirs:   src
+   default-language: Haskell2010
+   ghc-options:      -Wall

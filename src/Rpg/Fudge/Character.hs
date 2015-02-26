@@ -21,7 +21,7 @@ data Character = Character
    { charDisplayName :: String
    , charFullName :: String
    , charScale :: Int
-   , charDamageCapacity :: Trait
+   , charDamageCapacity :: Level
    --, charAttributes :: Map String Trait
    --, charSkills :: Map String Skill
    }

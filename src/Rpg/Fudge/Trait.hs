@@ -99,13 +99,51 @@ ldispLong :: Level -> String
 ldispLong l@(Level v) = printf "%+d %s" v (ldispFull l)
 
 
-{- | Convenience definitions of the core set of Trait Levels
+{- | Convenience definition for one of the core set of Trait Levels
+
+   +3 Superb
 -}
-superb, great, good, fair, mediocre, poor, terrible :: Level
+superb :: Level
 superb   = Level   3
+
+{- | Convenience definition for one of the core set of Trait Levels
+
+   +2 Great
+-}
+great :: Level
 great    = Level   2
+
+{- | Convenience definition for one of the core set of Trait Levels
+
+   +1 Good
+-}
+good :: Level
 good     = Level   1
+
+{- | Convenience definition for one of the core set of Trait Levels
+
+   +0 Fair
+-}
+fair :: Level
 fair     = Level   0
+
+{- | Convenience definition for one of the core set of Trait Levels
+
+   (-1) Mediocre
+-}
+mediocre :: Level
 mediocre = Level (-1)
+
+{- | Convenience definition for one of the core set of Trait Levels
+
+   (-2) Poor
+-}
+poor :: Level
 poor     = Level (-2)
+
+{- | Convenience definition for one of the core set of Trait Levels
+
+   (-3) Terrible
+-}
+terrible :: Level
 terrible = Level (-3)
