@@ -1,12 +1,12 @@
 2015-02-23
 
-- Rename this effort as a game library of some kind. Not rpg-specific.
 - Start using unit testing with HUnit and also Tasty
 - Bring that Fudge levels chart from the wiki into docs here
 - Update copyright and similar things everywhere
 - Clean up the dice utility
    - Does it need real arg parsing?
    - Show version number in usage
+- Fill out cabal file synopsis, description and more
 
 -----
 - Take a look at the organization of modules and apps. Ideally looking for separation of generic Rpg, Fudge-specific Rpg and this-game-specific. As well as a clear separation of presentation from all this.

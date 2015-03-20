@@ -4,9 +4,9 @@ import System.Environment ( getArgs )
 import System.Random ( RandomGen, newStdGen )
 import Text.Printf ( printf )
 
-import Rpg.Dice ( rollNs )
-import Rpg.Fudge.Dice ( rolldFs )
-import Rpg.Fudge.Trait ( Level (..), ldispLong )
+import TCE.Game.Dice ( rollNs )
+import TCE.Game.RPG.Fudge.Dice ( rolldFs )
+import TCE.Game.RPG.Fudge.Trait ( Level (..), ldispLong )
 
 
 usage :: String -> String

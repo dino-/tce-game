@@ -1,4 +1,4 @@
-name:                rpg
+name:                tce-game
 version:             1.0
 -- synopsis:            
 -- description:         
@@ -23,12 +23,12 @@ executable dice
    ghc-options:      -Wall
 
 library
-   exposed-modules:  Rpg.Dice
-                     Rpg.Fudge.Action
-                     Rpg.Fudge.Dice
-                     Rpg.Fudge.Character
-                     Rpg.Fudge.Skill
-                     Rpg.Fudge.Trait
+   exposed-modules:  TCE.Game.Dice
+                     TCE.Game.RPG.Fudge.Action
+                     TCE.Game.RPG.Fudge.Character
+                     TCE.Game.RPG.Fudge.Dice
+                     TCE.Game.RPG.Fudge.Skill
+                     TCE.Game.RPG.Fudge.Trait
    build-depends:      base >=4.7 && <4.8
                      , random >=1.1 && <1.2
    hs-source-dirs:   src

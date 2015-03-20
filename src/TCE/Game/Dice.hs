@@ -1,4 +1,4 @@
-module Rpg.Dice
+module TCE.Game.Dice
    ( listOfListN , rollNs , rollSums
 
    -- Re-exporting

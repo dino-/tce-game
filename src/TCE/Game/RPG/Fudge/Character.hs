@@ -1,10 +1,10 @@
-module Rpg.Fudge.Character
+module TCE.Game.RPG.Fudge.Character
    where
 
 --import Data.Map
 
---import Rpg.Fudge.Skill
-import Rpg.Fudge.Trait
+--import TCE.Game.RPG.Fudge.Skill
+import TCE.Game.RPG.Fudge.Trait
 
 
 {-

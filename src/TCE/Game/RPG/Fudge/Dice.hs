@@ -1,10 +1,11 @@
-module Rpg.Fudge.Dice
+module TCE.Game.RPG.Fudge.Dice
    ( rolldFs, rolldFSums )
    where
 
-import Rpg.Dice
-import Rpg.Fudge.Trait
 import System.Random ( randoms )
+
+import TCE.Game.Dice
+import TCE.Game.RPG.Fudge.Trait
 
 
 {- | Roll groups of Fudge dice and produce an infinite list of results

@@ -5,8 +5,8 @@ import Data.Maybe ( fromJust )
 import System.Random
 import Text.Printf
 
-import Rpg.Fudge.Action
-import Rpg.Fudge.Trait
+import TCE.Game.RPG.Fudge.Action
+import TCE.Game.RPG.Fudge.Trait
 
 
 data Item

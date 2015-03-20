@@ -7,7 +7,7 @@
    located here: <http://www.fudgerpg.com/goodies/fudge-files/core/>
 -}
 
-module Rpg.Fudge.Trait
+module TCE.Game.RPG.Fudge.Trait
    ( Level (..)
    , ldispShort
    , ldispLong

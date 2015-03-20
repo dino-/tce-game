@@ -1,7 +1,7 @@
-module Rpg.Fudge.Skill
+module TCE.Game.RPG.Fudge.Skill
    where
 
-import Rpg.Fudge.Trait
+import TCE.Game.RPG.Fudge.Trait
 
 
 data Skill = Skill

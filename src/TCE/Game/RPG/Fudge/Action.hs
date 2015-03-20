@@ -1,10 +1,10 @@
-module Rpg.Fudge.Action
+module TCE.Game.RPG.Fudge.Action
    where
 
 import System.Random
 
-import Rpg.Fudge.Dice
-import Rpg.Fudge.Trait
+import TCE.Game.RPG.Fudge.Dice
+import TCE.Game.RPG.Fudge.Trait
 
 
 resolveUnopAct :: RandomGen g => Level -> Level -> g -> (Bool, Level)
