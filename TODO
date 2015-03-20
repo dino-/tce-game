@@ -6,16 +6,13 @@
 - Clean up the dice utility
    - Does it need real arg parsing?
    - Show version number in usage
-- Fill out cabal file synopsis, description and more
 
------
-- Take a look at the organization of modules and apps. Ideally looking for separation of generic Rpg, Fudge-specific Rpg and this-game-specific. As well as a clear separation of presentation from all this.
 
 -----
 Can I model the cat stalking process?
 
 -----
 - Start adding unit testing. Things that need it so far:
-   - Rpg.Fudge.Trait.showShort
-   - Rpg.Fudge.Skill.skillAdvDiff
-   - Rpg.Fudge.Skill.skillAdvDiff'
+   - TCE.Game.RPG.Fudge.Trait.showShort
+   - TCE.Game.RPG.Fudge.Skill.skillAdvDiff
+   - TCE.Game.RPG.Fudge.Skill.skillAdvDiff'

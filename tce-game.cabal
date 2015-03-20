@@ -1,7 +1,7 @@
 name:                tce-game
 version:             1.0
--- synopsis:            
--- description:         
+synopsis:            Game mechanics library
+description:         A library containing various game development types and functions. Includes some dice-simulating functions and also some functionality from the Fudge RPG system.
 license:             BSD3
 license-file:        LICENSE
 author:              Dino Morelli
@@ -14,8 +14,6 @@ cabal-version:       >=1.10
 
 executable dice
    main-is:          dice.hs
-   -- other-modules:       
-   -- other-extensions:    
    build-depends:      base >=4.7 && <4.8
                      , random >=1.1 && <1.2
    hs-source-dirs:   src
