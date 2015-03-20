@@ -1,18 +1,5 @@
 # Development notes
 
-## New module layout
-
-Name, top-level module dir:
-
-- tce-game (Tightly Controlled Effects)
-
-      TCE/
-         Game/
-            Dice.hs
-            RPG/
-               Fudge/
-                  Dice.hs
-
 
 # 2015-02-25 Rewrite below here in Markdown:
 
