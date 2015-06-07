@@ -1,21 +1,23 @@
 name:                tce-game
 version:             1.0
-synopsis:            Game mechanics library
-description:         A library containing various game development types and functions. Includes some dice-simulating functions and also some functionality from the Fudge RPG system.
+cabal-version:       >=1.10
+build-type:          Simple
 license:             BSD3
 license-file:        LICENSE
+copyright:           2008-2015 Dino Morelli
 author:              Dino Morelli
 maintainer:          dino@ui3.info
-copyright:           2008-2015 Dino Morelli
+stability:           experimental
+homepage:            http://hub.darcs.net/dino/tce-game
+synopsis:            Game mechanics library
+description:         A library containing various game development types and functions. Includes some dice-simulating functions and also some functionality from the Fudge RPG system.
 category:            Game
-build-type:          Simple
 extra-source-files:  README.md
-cabal-version:       >=1.10
 
 executable dice
    main-is:          dice.hs
-   build-depends:      base >=4.7 && <4.8
-                     , random >=1.1 && <1.2
+   build-depends:      base >= 3 && < 5
+                     , random
    hs-source-dirs:   src
    default-language: Haskell2010
    ghc-options:      -Wall
@@ -27,8 +29,8 @@ library
                      TCE.Game.RPG.Fudge.Dice
                      TCE.Game.RPG.Fudge.Skill
                      TCE.Game.RPG.Fudge.Trait
-   build-depends:      base >=4.7 && <4.8
-                     , random >=1.1 && <1.2
+   build-depends:      base >= 3 && < 5
+                     , random
    hs-source-dirs:   src
    default-language: Haskell2010
    ghc-options:      -Wall

@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-Game mechanics library and related work
+Game mechanics library and related work (Haskell)
 
 
 ## Description
