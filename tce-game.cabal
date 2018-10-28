@@ -8,7 +8,7 @@ copyright:           2008-2015 Dino Morelli
 author:              Dino Morelli
 maintainer:          dino@ui3.info
 stability:           experimental
-homepage:            http://hub.darcs.net/dino/tce-game
+homepage:            https://github.com/dino-/tce-game
 synopsis:            Game mechanics library
 description:         A library containing various game development types and functions. Includes some dice-simulating functions and also some functionality from the Fudge RPG system.
 category:            Game
