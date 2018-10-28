@@ -1,4 +1,5 @@
-#! /usr/bin/runhaskell -isrc
+#! /usr/bin/env stack
+-- stack runghc -- -isrc
 
 import qualified Data.Map as Map
 import Data.Maybe ( fromJust )
